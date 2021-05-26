@@ -12,3 +12,30 @@ const books = [
   { title: "Talking to Strangers", author: "Malcolm Gladwell", genre: "Nonfiction" },
   { title: "Teaching to Transgress", author: "bell hooks", genre: "Education" },
 ]
+
+
+// Using Arrow Functions
+const getBookInformation = (books, title) => books.find(book => book.title === title)
+
+const booksByGenre = (books, genre) => {
+  const booksList = books.filter(book => book.genre === genre)
+  return booksList.length > 0 ? booksList : "None Found"
+}
+
+const booksWithAuthors = books => books.map(book => `${book.title} by ${book.author}`)
+
+
+
+// Using Long Form
+function getBookInformation(books, title) {
+  return books.find(book => book.title === title)
+}
+
+function booksByGenre(books, genre) {
+  const booksList = books.filter(book => book.genre === genre)
+  return booksList.length > 0 ? booksList : "None Found"
+}
+
+function booksWithAuthors(books) {
+  return books.map(book => `${book.title} by ${book.author}`)
+}
