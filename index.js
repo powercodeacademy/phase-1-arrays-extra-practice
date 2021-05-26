@@ -14,7 +14,7 @@ const books = [
 ]
 
 
-// Using Arrow Functions
+// Using Only Arrow Functions
 const getBookInformation = (books, title) => books.find(book => book.title === title)
 
 const booksByGenre = (books, genre) => {
@@ -26,7 +26,7 @@ const booksWithAuthors = books => books.map(book => `${book.title} by ${book.aut
 
 
 
-// Using Long Form
+// Using Long Form for Main Function (arrow for callbacks)
 function getBookInformation(books, title) {
   return books.find(book => book.title === title)
 }
@@ -38,4 +38,31 @@ function booksByGenre(books, genre) {
 
 function booksWithAuthors(books) {
   return books.map(book => `${book.title} by ${book.author}`)
+}
+
+
+// Using Only Long Form
+function getBookInformation(books, title) {
+  function findMatchingTitle(book) {
+    return book.title === title
+  }
+
+  return books.find(findMatchingTitle)
+}
+
+function booksByGenre(books, genre) {
+  function filterBookGenre(book) {
+    return book.genre === genre
+  }
+
+  const booksList = books.filter(filterBookGenre)
+  return booksList.length > 0 ? booksList : "None Found"
+}
+
+function booksWithAuthors(books) {
+  function titleAndAuthor(book) {
+    return `${book.title} by ${book.author}`
+  }
+
+  return books.map(titleAndAuthor)
 }
