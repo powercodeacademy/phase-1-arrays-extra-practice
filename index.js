@@ -20,6 +20,12 @@ const getBookInformation = (books, title) => books.find(book => book.title === t
 const booksByGenre = (books, genre) => {
   const booksList = books.filter(book => book.genre === genre)
   return booksList.length > 0 ? booksList : "None Found"
+
+  // if (booksList.length > 0) {
+  //   return booksList
+  // } else {
+  //   return "None Found"
+  // }
 }
 
 const booksWithAuthors = books => books.map(book => `${book.title} by ${book.author}`)
@@ -34,6 +40,12 @@ function getBookInformation(books, title) {
 function booksByGenre(books, genre) {
   const booksList = books.filter(book => book.genre === genre)
   return booksList.length > 0 ? booksList : "None Found"
+
+  // if (booksList.length > 0) {
+  //   return booksList
+  // } else {
+  //   return "None Found"
+  // }
 }
 
 function booksWithAuthors(books) {
@@ -57,6 +69,12 @@ function booksByGenre(books, genre) {
 
   const booksList = books.filter(filterBookGenre)
   return booksList.length > 0 ? booksList : "None Found"
+
+  // if (booksList.length > 0) {
+  //   return booksList
+  // } else {
+  //   return "None Found"
+  // }
 }
 
 function booksWithAuthors(books) {
